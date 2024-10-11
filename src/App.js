@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import AudioButton from './speakerbutton';
+import TemperatureConverter from './temperature_converter';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
 
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img
-              src="https://picsum.photos/1200/400?random=1"
+              src={`${process.env.PUBLIC_URL}/passport.png`}
               alt="Card1"
               className="w-full h-24 object-cover"
             />
@@ -30,14 +31,14 @@ function App() {
               <p className="text-gray-600 text-xl">Communicate in Japanese</p>
 
               <div className='mt-4 flex space-x-4'>
-                <AudioButton className="m-2" text="I want to check in" audioSrc={`${process.env.PUBLIC_URL}/checkin_shitai.mp3`} />
+                <AudioButton className="m-2" text="I'd like to check in" audioSrc={`${process.env.PUBLIC_URL}/checkin_shitai.mp3`} />
               </div>
             </div>
           </div>
 
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img
-              src="https://picsum.photos/1200/400?random=2"
+              src={`${process.env.PUBLIC_URL}/payment.png`}
               alt="Card2"
               className="w-full h-24 object-cover"
             />
@@ -54,6 +55,49 @@ function App() {
               </div>
             </div>
           </div>
+
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src={`${process.env.PUBLIC_URL}/checkout.png`}
+              alt="Card2"
+              className="w-full h-24 object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">How to use the air conditioner remote control.</h2>
+              <p className="text-gray-600">There is an air conditioner installed in your room.</p>
+              <p className="text-gray-600">Temperature settings on Japanese air conditioners are displayed in Celsius</p>
+              <hr className='m-3' />
+              <p className="text-gray-600 text-l">Here's an overview over the functions on your remote control:</p>
+
+              <img
+                src={`${process.env.PUBLIC_URL}/aircon_translated.png`}
+                alt="Card2"
+                className="w-full object-cover rounded-lg mt-4 mb-4"
+              />
+              <p className="text-gray-600 text-l mb-4">If you're used to Fahrenheit and want to convert, you can use the converter below.</p>
+              <TemperatureConverter />
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src={`${process.env.PUBLIC_URL}/aircon.png`}
+              alt="Card2"
+              className="w-full h-24 object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">How to check out</h2>
+              <p className="text-gray-600">Please check out by 10am.</p>
+              <p className="text-gray-600">If you extend the time, an additional 1,000 Yen will be charged for every 30 minutes.</p>
+              <hr className='m-3' />
+              <p className="text-gray-600 text-xl">Communicate in Japanese</p>
+
+              <div className='mt-4 flex space-x-4'>
+                <AudioButton className="m-2" text="I'd like to check out." audioSrc={`${process.env.PUBLIC_URL}/checkout_shitai.mp3`} />
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
